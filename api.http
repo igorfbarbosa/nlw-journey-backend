@@ -1,8 +1,7 @@
 @baseUrl = localhost:3003
 
-GET http://{{baseUrl}}/listar
-
 ###
+
 # @name createTrip
 POST http://{{baseUrl}}/trips
 Content-Type: application/json
@@ -20,14 +19,39 @@ Content-Type: application/json
 }
 
 ###
+
+# @name updateTrip
+PUT http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7
+Content-Type: application/json
+
+{
+  "destination": "Curitiba - PR",
+  "starts_at": "2024-10-01 18:00:00",
+  "ends_at": "2024-10-15 18:00:00"
+}
+
+###
+
+# @name getTripDetails
+GET http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7
+
+###
+
 # @name confirmTrip
 GET http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7/confirm
 
 ###
+
 # @name confirmParticipant
-GET http://{{baseUrl}}/participants/04dc68de-7f89-499b-9984-51d786bdfe04/confirm
+GET http://{{baseUrl}}/participants/4d82111d-c0bd-4e33-bb03-f84b02234303/confirm
 
 ###
+
+# @name getParticipant
+GET http://{{baseUrl}}/participants/4d82111d-c0bd-4e33-bb03-f84b02234303
+
+###
+
 # @name createActivity
 POST http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7/activities
 Content-Type: application/json
@@ -56,3 +80,18 @@ Content-Type: application/json
 
 # @name getLinks
 GET http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7/links
+
+###
+
+# @name getParticipants
+GET http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7/participants
+
+###
+# @name createInvite
+POST http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7/invites
+Content-Type: application/json
+
+{
+  "email": "teste@mail.com"
+}
+
