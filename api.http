@@ -18,3 +18,41 @@ Content-Type: application/json
     "johndoe@gmail.com"
   ]
 }
+
+###
+# @name confirmTrip
+GET http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7/confirm
+
+###
+# @name confirmParticipant
+GET http://{{baseUrl}}/participants/04dc68de-7f89-499b-9984-51d786bdfe04/confirm
+
+###
+# @name createActivity
+POST http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7/activities
+Content-Type: application/json
+
+{
+  "title": "Almoço",
+  "occurs_at": "2024-10-14 12:00:00"
+}
+
+###
+
+# @name getActivities
+GET http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7/activities
+
+###
+# @name createLink
+POST http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7/links
+Content-Type: application/json
+
+{
+  "title": "Reserva do AirBnB",
+  "url": "https://airbnb.com/reserva-journey"
+}
+
+###
+
+# @name getLinks
+GET http://{{baseUrl}}/trips/9650ccbd-3f92-48b0-85fa-488bd0a97fb7/links
